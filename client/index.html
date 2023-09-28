@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: 0;
+    }
+
+    .container {
+      margin: auto;
+      margin-top: 4rem;
+      width: 80%;
+      height: fit-content;
+      border: 1px solid black;
+    }
+
+    .chat-section {
+      width: 100%;
+      height: 12rem;
+    }
+
+    .chat-box:nth-child(even) {
+      background-color: white;
+    }
+
+    .chat-box:nth-child(odd) {
+      background-color: #DDDD;
+    }
+
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="chat-section">
+      <div class="chat-box">Hello</div>
+    </div>
+    <div class="input">
+      <div class="chat-input">
+        <input type="text" placeholder="your chat">
+        <button>Send</button>
+      </div>
+      <div class="room-input">
+        <input type="text" placeholder="room">
+        <button>Join</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="module" src="index.js">
+
+</script>
+
+</html>
