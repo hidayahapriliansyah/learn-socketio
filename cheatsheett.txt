@@ -1,0 +1,30 @@
+i love to say that
+
+socket.emit() is like sending request
+socket.on() is like receiving the request
+
+socket.broadcast.emit('custom-event', ...)
+socket.to(room).emit('custom-event', ...)
+
+socket.join(room)
+
+pada socket emit kita bisa melakukan callback
+yang memastikan bahwa request nyampe ke server
+dan server langsung ngasih pesan nya 
+
+contoh 
+client
+socket.emit('chat message', input.value, (response) => {
+  console.log(response);
+  // response berasal dari socket di server yang menjalankan
+  // callback untuk mengirim pesan ke client
+});
+
+server
+socket.on('chat message', (arg, cb) => {
+  // arg ini berisi pesan dari client yaitu input value
+  // cb ini adalah callback yang akan mengirim pesan ke client pengirim
+  cb('success');
+  // misal apabila pada client melakukan console.log(response) maka response akan berisi apapun 
+  // yang menjadi argumen cb di server
+})

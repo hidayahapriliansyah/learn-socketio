@@ -79,7 +79,7 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (input.value) {
-        socket.emit('chat message', input.value);
+        socket.emit('chat message', input.value, 'hello');
         if (input.value === 'show alert') {
           socket.emit('show alert', input.value);
         }
@@ -94,9 +94,9 @@
       window.scrollTo(0, document.body.scrollHeight);
     });
 
-    socket.on('client show alert', (msg) => {
-      alert(msg);
-    });
+    // socket.on('client show alert', (msg) => {
+    //   alert(msg);
+    // });
   </script>
 </body>
 
